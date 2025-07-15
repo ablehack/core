@@ -1,4 +1,4 @@
-package str
+package strs
 
 import (
 	"encoding/hex"
@@ -39,12 +39,13 @@ func HTA(s string) string {
 	return string(result)
 }
 
-// 传入整数，返回其对应的HEX字符串
+// 传入整数int，返回其对应的HEX字符串
 func ITH(n int) string {
 	return fmt.Sprintf("%02x", n)
 }
 
-// 传入HEX字符串，返回其对应的整数
+// 传入HEX字符串，返回其对应的整数int
+// 无法转换时返回0，并返回错误
 func HTI(s string) (int, error) {
 	num, err := strconv.ParseInt(s, 16, 64)
 	if err != nil {
